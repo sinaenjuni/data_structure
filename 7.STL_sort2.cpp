@@ -18,6 +18,11 @@ class Student{
 };
 
 
+bool compare(Student st1, Student st2){
+    return st1.score < st2.score;
+}
+
+
 int main(){
     Student students[] ={
         Student("신현준", 92),
@@ -26,11 +31,11 @@ int main(){
         Student("이원희", 87)
     };
     
-    sort(students, students + 4);
+    sort(students, students + 4, compare);
 
-    // for(Student student: students){
-    //     cout << student.name << " ";
-    // }
+    for(Student student: students){
+        cout << student.name << " ";
+    }
 
     // for(int i=0; i<4; i++){
     //     cout << students[i].name << " ";
